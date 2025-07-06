@@ -19,7 +19,7 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 
 ## 🏗️ Architecture Overview
 
-![AutoShield Architecture](architecture.png)
+![AutoShield Architecture](architecture.png.png)
 
 > **Detection Flow**:  
 `AWS Config → EventBridge → Lambda → SNS & DynamoDB`
