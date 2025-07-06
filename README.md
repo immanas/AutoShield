@@ -1,6 +1,6 @@
 # 🛡️ AutoShield – Real-Time AWS Resource Exposure Monitor & Alert System
 
-🔒 AutoShield is like a digital security guard for your AWS cloud . AutoShield is a **serverless cloud security monitoring system** built on core AWS services. It detects critical misconfigurations like public S3 buckets, open EC2 ports, or overly permissive IAM policies in **real time**, alerts administrators via email using SNS, and logs violations into DynamoDB for future analysis and dashboarding.
+AutoShield is like a digital security guard for your AWS cloud . AutoShield is a **serverless cloud security monitoring system** built on core AWS services. It detects critical misconfigurations like public S3 buckets, open EC2 ports, or overly permissive IAM policies in **real time**, alerts administrators via email using SNS, and logs violations into DynamoDB for future analysis and dashboarding.
 
 Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShield helps prevent accidental data leaks and compliance violations in dynamic cloud environments.
 
