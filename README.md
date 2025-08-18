@@ -6,7 +6,7 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 
 ---
 
-## 🚨 Real-World Risks Addressed
+## 🚨 Real-World Risks Addressed 
 
 | ⚠️ Misconfiguration      | 🔍 What Can Go Wrong                                                   |
 |--------------------------|------------------------------------------------------------------------|
