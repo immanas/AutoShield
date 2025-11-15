@@ -17,7 +17,7 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 
 ---
 
-### 🛡️ Why AutoShield? — Key Features & Their Purpose
+### 🛡️ Why AutoShield? — Key Features & Their Purpose 
 
 | 🚀 Feature | 📝 Description | 🎯 Why It Matters |
 |-----------|----------------|------------------|
