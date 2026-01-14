@@ -36,16 +36,8 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 
 ![AutoShield Architecture](architecture.png.png)
 
-> **Detection Flow**:  
-`AWS Config → EventBridge → Lambda → SNS & DynamoDB`
+## 🔄 System Design :
 
-- **AWS Config** evaluates resource compliance using managed rules  
-- **EventBridge** routes non-compliance events  
-- **Lambda** logs violations & triggers alerts  
-- **SNS** notifies security teams (via email)  
-- **DynamoDB** stores violations for dashboarding (DynbDashboard coming soon)
-
----
 
 ## ⚙️ Tech Stack
 
