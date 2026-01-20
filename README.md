@@ -36,7 +36,6 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 
 ![AutoShield Architecture](architecture.png.png)
 
-## 🔄 System Design :
 
 
 ## ⚙️ Tech Stack
