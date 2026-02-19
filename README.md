@@ -1,12 +1,10 @@
-# 🛡️ AutoShield – Real-Time AWS Resource Exposure Monitor & Alert System
+# 🛡️ AutoShield – Real Time AWS Resource Exposure Monitor & Alert System
 
 AutoShield is like a digital security guard for your AWS cloud . AutoShield is a **serverless cloud security monitoring system** built on core AWS services. It detects critical misconfigurations like public S3 buckets, open EC2 ports, or overly permissive IAM policies in **real time**, alerts administrators via email using SNS, and logs violations into DynamoDB for future analysis and dashboarding.
 
 Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShield helps prevent accidental data leaks and compliance violations in dynamic cloud environments.
 
----
-
-## 🚨 Real-World Risks Addressed 
+## 🚨 Real-World Risks Addressed :
 
 | ⚠️ Misconfiguration      | 🔍 What Can Go Wrong                                                   |
 |--------------------------|------------------------------------------------------------------------|
@@ -14,8 +12,6 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 | **Open EC2 Port (22/3389)** | Remote server access, brute-force attacks, and lateral movement       |
 | **Unrestricted IAM Policy** | Privilege escalation and full-account compromise                     |
 | **Unencrypted RDS/EBS**  | Sensitive database content exposed without encryption at rest          |
-
----
 
 ### 🛡️ Why AutoShield? — Key Features & Their Purpose  
 
@@ -36,8 +32,6 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 
 ![AutoShield Architecture](architecture.png.png)
 
-
-
 ## ⚙️ Tech Stack
 
 | AWS Service      | Role in the System                              |
@@ -48,8 +42,6 @@ Designed for **DevSecOps**, **Cloud Engineers**, and **Security Teams**, AutoShi
 | **Amazon SNS**    | Sends email alerts                              |
 | **Amazon DynamoDB** | Stores violation logs                         |
 | **IAM Roles**     | Provides least-privilege access to services     |
-
----
 
 ## 🛠 Features
 
@@ -80,22 +72,6 @@ AutoShield is an open-source, serverless security auditing platform for AWS. We 
 | 📨 SNS/Slack Alerts        | Send real-time notifications to teams when critical issues are detected       |
 | 📦 Archive to S3           | Automatically back up old logs to S3 Glacier for cost-efficient storage        |
 
----
-
-### 🛠️ How to Contribute
-
-- 🍴 Fork the repo  
-- 📦 Create a new feature branch: `git checkout -b feature-name`  
-- ✅ Make your changes and test them  
-- 📬 Submit a pull request describing your enhancement  
-
----
-
-### 🤝 Let’s Make Cloud Safer Together!
-
-Made with ❤️ by **Manas Gantait**
-
----
 
 ### 🔍 About AutoShield
 
@@ -106,5 +82,17 @@ Made with ❤️ by **Manas Gantait**
 - 🔁 EventBridge + Lambda Driven  
 - 📦 Open Source – Fully Extendable  
 - 🧭 Cloud-Native, DevOps-Ready  
-- 🛠️ Built for Scale and Observability  
+- 🛠️ Built for Scale and Observability
+
+
+### 🛠️ How to Contribute
+
+- 🍴 Fork the repo  
+- 📦 Create a new feature branch: `git checkout -b feature-name`  
+- ✅ Make your changes and test them  
+- 📬 Submit a pull request describing your enhancement  
+
+### 🤝 Let’s Make Cloud Safer Together!
+Made with ❤️ by **Manas Gantait**
+
 
