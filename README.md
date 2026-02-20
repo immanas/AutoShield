@@ -25,7 +25,47 @@ It ensures:
 | Scaling security checks across hundreds of resources is operationally expensive | Serverless architecture scales automatically per event load         |
 | Lack of audit clarity on who fixed what and when                      | Logs every action in DynamoDB + CloudWatch for traceability         |
 
+## 📁 Project Structure :
+```
+AutoShield/
+│
+├── Autosheild/  
+│   # Core project source code directory
+│
+│   ├── Lamda/  
+│   │   # AWS Lambda service (detection + remediation logic)
+│   │
+│   │   ├── lambda_function.py  
+│   │   │   # Main Lambda handler: processes events, evaluates rules, executes remediation
+│   │
+│   │   └── desktop.ini  
+│   │       # System file (not relevant to project logic)
+│
+├── Screenshots/  
+│   # Execution proof (logs, before/after states, system behavior)
+│
+│   ├── AutoShield.png  
+│   │   # Architecture or overview image of the system
+│
+│   ├── Screenshot_1.png  
+│   │   # CloudWatch logs showing Lambda execution
+│
+│   ├── Screenshot_2.png  
+│   │   # S3 state BEFORE remediation (public access enabled)
+│
+│   └── Screenshot_3.png  
+│       # S3 state AFTER remediation (public access blocked)
+│
+├── AutoShield_Presentation.ppt.pptx  
+│   # Project presentation (high-level explanation and visuals)
+│
+├── LICENSE  
+│   # Open-source license (MIT)
+│
+└── README.md  
+    # Project documentation (architecture, setup, proof, design)
 
+```
 ### 🛡️ Why AutoShield? — Core Features :
 
 | 🚀 Feature | 📝 Description | 🎯 Why It Matters |
