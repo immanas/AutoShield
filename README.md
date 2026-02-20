@@ -43,7 +43,7 @@ It ensures:
 ## 🏗️ Architecture Diagram :
 
 
-![AutoShield Architecture](architecture.png.png)
+![AutoShield Architecture](Screenshots/AutoShield.png)
 
 ## 🧰 Tech Stack
 
@@ -79,6 +79,102 @@ aws events put-events --entries file://event.json
 
 ```
 
+## ☁️ Infrastructure & Cloud :
+
+***AWS Lambda:***
+- Core execution engine (detection + remediation)
+- Fully stateless and auto-scaled
+- Handles event processing and remediation logic
+
+***Amazon EventBridge:***
+- Real-time event ingestion and routing
+- Captures infrastructure changes instantly
+- Decouples event producers from processing logic
+
+***Amazon DynamoDB:***
+- Stores:
+  - Security rules
+  - Execution logs
+  - Audit history
+- Low-latency, high-throughput data access
+
+***Amazon CloudWatch:***
+- Observability layer
+- Logs, metrics, and failure tracking
+- Enables debugging and monitoring
+
+---
+
+## 🔄 Request Lifecycle :
+
+1. Cloud resource change occurs (e.g., S3 becomes public)  
+2. EventBridge captures the event in real time  
+3. Lambda processes the incoming event  
+4. Policy engine evaluates rule compliance  
+5. Violation detected → remediation triggered  
+6. Action executed (e.g., block public access)  
+7. Result logged in DynamoDB and CloudWatch for traceability  
+
+---
+
+## 💡 Why This Design? :
+
+- **Event-driven architecture**  
+  → Zero delay between issue and response  
+
+- **Serverless execution**  
+  → No infrastructure management, automatic scaling  
+
+- **Policy abstraction**  
+  → Rules are decoupled from execution logic  
+
+- **Decoupled components**  
+  → Improves fault isolation and maintainability  
+
+---
+
+## 🛡️ Resilience & Security :
+
+***Failure Handling***
+- Event retries handled via EventBridge  
+- Failed remediations logged for traceability  
+- Idempotent execution prevents duplicate actions  
+
+***Security Design:***
+- IAM roles follow least-privilege principle  
+- Strict event validation before execution  
+- No hardcoded or embedded credentials  
+
+***Scalability Thinking:***
+- Lambda scales automatically per event volume  
+- DynamoDB supports high-throughput workloads  
+- System remains stable under burst traffic  
+
+---
+
+## 🧠 Engineering Philosophy :
+
+***Key Decisions:***
+- **Event-driven > Scheduled scanning**  
+  → Real-time enforcement instead of delayed detection  
+
+- **Serverless > Containers**  
+  → Reduced operational overhead, faster execution  
+
+- **Deterministic rules > ML-based decisions**  
+  → Predictability and control over automation  
+
+***Trade-offs:***
+- No predictive intelligence (by design)  
+- Limited to defined rule coverage  
+- Requires strong IAM design to avoid over-permissioning  
+
+ ***Explicit Limitations:***
+- Does not detect unknown threat patterns  
+- No UI/dashboard (intentionally backend-focused)  
+- Depends on event availability (not periodic scans)  
+ 
+
 ## 🛡️ AutoShield – Contributions Welcome!
 
 AutoShield is an open-source, serverless security auditing platform for AWS. We welcome contributions from cloud engineers, security enthusiasts, and DevSecOps professionals!
@@ -95,18 +191,6 @@ AutoShield is an open-source, serverless security auditing platform for AWS. We 
 | 🔐 Role-Based Access       | Add authentication for different dashboard users (Admin vs Viewer)            |
 | 📨 SNS/Slack Alerts        | Send real-time notifications to teams when critical issues are detected       |
 | 📦 Archive to S3           | Automatically back up old logs to S3 Glacier for cost-efficient storage        |
-
-
-### 🔍 About AutoShield
-
-- 🌩️ Serverless AWS Monitoring  
-- 🔐 Real-Time Misconfiguration Detection  
-- 📚 DynamoDB-backed Security Logs  
-- 📈 Live DynbDashboard Visualization  
-- 🔁 EventBridge + Lambda Driven  
-- 📦 Open Source – Fully Extendable  
-- 🧭 Cloud-Native, DevOps-Ready  
-- 🛠️ Built for Scale and Observability
 
 
 ### 🛠️ How to Contribute
