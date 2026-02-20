@@ -109,8 +109,23 @@ aws events put-events --entries file://event.json
 4. Policy engine evaluates rule compliance  
 5. Violation detected → remediation triggered  
 6. Action executed (e.g., block public access)  
-7. Result logged in DynamoDB and CloudWatch for traceability  
+7. Result logged in DynamoDB and CloudWatch for traceability
 
+***⚙️ Remediation Logic (Example):***
+Example: Blocking public S3 access
+
+```python
+if bucket_is_public:
+    s3.put_public_access_block(
+        Bucket=bucket_name,
+        PublicAccessBlockConfiguration={
+            'BlockPublicAcls': True,
+            'IgnorePublicAcls': True,
+            'BlockPublicPolicy': True,
+            'RestrictPublicBuckets': True
+        }
+    )
+```
 
 ## 💡 Why This Design? :
 
@@ -124,7 +139,23 @@ aws events put-events --entries file://event.json
   → Rules are decoupled from execution logic  
 
 - **Decoupled components**  
-  → Improves fault isolation and maintainability  
+  → Improves fault isolation and maintainability
+
+**🧠 Rule Engine Design:**
+
+Rules are stored and evaluated dynamically instead of hardcoding logic.
+```
+Example:
+{
+  "resource": "S3",
+  "condition": "public == true",
+  "action": "block_public_access"
+}
+```
+- Lambda fetches rules from DynamoDB
+- Evaluates incoming events against rules
+- Triggers mapped remediation actions
+This keeps detection logic flexible and extensible.
 
 
 ## 🛡️ Resilience & Security :
