@@ -42,7 +42,6 @@ It ensures:
 
 ## 🏗️ Architecture Diagram :
 
-
 ![AutoShield Architecture](Screenshots/AutoShield.png)
 
 ## 🧰 Tech Stack
@@ -54,8 +53,6 @@ It ensures:
 - **Monitoring:** CloudWatch  
 - **Language:** Python  
 - **IaC:** Terraform (optional but recommended)
-
----
 
 ## ⚡ Quickstart (30-Second Run)
 
@@ -103,7 +100,6 @@ aws events put-events --entries file://event.json
 - Logs, metrics, and failure tracking
 - Enables debugging and monitoring
 
----
 
 ## 🔄 Request Lifecycle :
 
@@ -115,7 +111,6 @@ aws events put-events --entries file://event.json
 6. Action executed (e.g., block public access)  
 7. Result logged in DynamoDB and CloudWatch for traceability  
 
----
 
 ## 💡 Why This Design? :
 
@@ -131,7 +126,6 @@ aws events put-events --entries file://event.json
 - **Decoupled components**  
   → Improves fault isolation and maintainability  
 
----
 
 ## 🛡️ Resilience & Security :
 
@@ -149,8 +143,6 @@ aws events put-events --entries file://event.json
 - Lambda scales automatically per event volume  
 - DynamoDB supports high-throughput workloads  
 - System remains stable under burst traffic  
-
----
 
 ## 🧠 Engineering Philosophy :
 
@@ -179,8 +171,6 @@ aws events put-events --entries file://event.json
 
 AutoShield is an open-source, serverless security auditing platform for AWS. We welcome contributions from cloud engineers, security enthusiasts, and DevSecOps professionals!
 
----
-
 ### 💡 Ideas You Can Work On
 
 | 🔧 Feature Idea            | 📝 Description                                                                 |
@@ -202,5 +192,3 @@ AutoShield is an open-source, serverless security auditing platform for AWS. We 
 
 ### 🤝 Let’s Make Cloud Safer Together!
 Made with ❤️ by **Manas Gantait**
-
-
